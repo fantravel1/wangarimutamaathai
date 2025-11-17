@@ -1,0 +1,314 @@
+/* ========================================
+   VIDEO LIBRARY PAGE STYLES
+   ======================================== */
+
+.videos-page {
+    background-color: #fafaf8;
+    padding-top: 80px;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.page-hero {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    color: var(--light-text);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.7;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* ========================================
+   VIDEO CATEGORIES
+   ======================================== */
+
+.video-categories {
+    position: sticky;
+    top: 70px;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--light-cream);
+    background: white;
+    color: var(--dark-text);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    border-color: var(--secondary-green);
+    color: var(--secondary-green);
+}
+
+.category-btn.active {
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+/* ========================================
+   VIDEO CONTENT
+   ======================================== */
+
+.video-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.video-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.video-section.hidden {
+    display: none;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+}
+
+/* ========================================
+   VIDEO GRID
+   ======================================== */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.video-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-card.featured {
+    grid-column: span 2;
+}
+
+.video-card.hidden {
+    display: none;
+}
+
+/* ========================================
+   VIDEO THUMBNAIL
+   ======================================== */
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    overflow: hidden;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(45, 90, 61, 0.9) 0%, rgba(74, 124, 89, 0.9) 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-placeholder:hover {
+    background: linear-gradient(135deg, rgba(45, 90, 61, 0.8) 0%, rgba(74, 124, 89, 0.8) 100%);
+}
+
+.play-icon {
+    font-size: 4rem;
+    color: white;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.video-placeholder:hover .play-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   VIDEO INFO
+   ======================================== */
+
+.video-info {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.video-meta {
+    font-size: 0.85rem;
+    color: var(--earth-brown);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.video-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--dark-text);
+    margin-bottom: var(--spacing-sm);
+    flex: 1;
+}
+
+.video-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.video-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-green);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--secondary-green);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.video-link:hover {
+    background: var(--secondary-green);
+    color: white;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 968px) {
+    .videos-page {
+        padding-top: 120px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card.featured {
+        grid-column: span 1;
+    }
+
+    .video-categories {
+        top: 100px;
+        padding: 0.75rem 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .category-btn {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .video-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .play-icon {
+        font-size: 3rem;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-card {
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+.video-card:nth-child(1) { animation-delay: 0.1s; }
+.video-card:nth-child(2) { animation-delay: 0.2s; }
+.video-card:nth-child(3) { animation-delay: 0.3s; }
+.video-card:nth-child(4) { animation-delay: 0.4s; }

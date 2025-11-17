@@ -1,0 +1,371 @@
+/* ========================================
+   ACTION PAGE STYLES
+   ======================================== */
+
+.action-page {
+    background-color: #fafaf8;
+    padding-top: 80px;
+}
+
+.hero-quote {
+    font-family: var(--font-serif);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: var(--spacing-lg) auto 0;
+    opacity: 0.95;
+    border-left: 4px solid var(--accent-gold);
+    padding-left: var(--spacing-md);
+}
+
+.hero-quote cite {
+    display: block;
+    margin-top: var(--spacing-sm);
+    font-size: 1rem;
+    font-style: normal;
+    opacity: 0.9;
+}
+
+/* ========================================
+   ACTION CONTENT
+   ======================================== */
+
+.action-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.action-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-intro {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--earth-brown);
+    max-width: 900px;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.7;
+}
+
+/* ========================================
+   ORGANIZATION CARDS
+   ======================================== */
+
+.org-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.org-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-top-color: var(--accent-gold);
+}
+
+.org-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.org-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.org-actions {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+}
+
+.org-actions li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.org-actions li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-green);
+    font-weight: bold;
+}
+
+.org-link {
+    display: inline-block;
+    margin-top: var(--spacing-md);
+    font-weight: 600;
+    color: var(--secondary-green);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.org-link:hover {
+    color: var(--accent-gold);
+    transform: translateX(4px);
+}
+
+/* ========================================
+   ACTION CARDS
+   ======================================== */
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.action-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.action-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.action-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.action-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.action-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.action-steps li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.action-steps li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+}
+
+/* ========================================
+   RESOURCES SECTION
+   ======================================== */
+
+.resources-section {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    margin-top: var(--spacing-xl);
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.resource-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.resource-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-card li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-card a {
+    color: var(--secondary-green);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.resource-card a:hover {
+    color: var(--accent-gold);
+    text-decoration: underline;
+}
+
+/* ========================================
+   CALL TO ACTION
+   ======================================== */
+
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    color: white;
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+.cta-text {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+}
+
+.cta-button {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cta-button.primary {
+    background: var(--accent-gold);
+    color: var(--dark-text);
+}
+
+.cta-button.primary:hover {
+    background: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+    background: white;
+    color: var(--primary-green);
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 968px) {
+    .action-page {
+        padding-top: 120px;
+    }
+
+    .org-grid,
+    .action-grid,
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .action-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .resources-section,
+    .cta-section {
+        padding: var(--spacing-md);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.org-card,
+.action-card {
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+.org-card:nth-child(1) { animation-delay: 0.1s; }
+.org-card:nth-child(2) { animation-delay: 0.2s; }
+.org-card:nth-child(3) { animation-delay: 0.3s; }
+
+.action-card:nth-child(1) { animation-delay: 0.1s; }
+.action-card:nth-child(2) { animation-delay: 0.2s; }
+.action-card:nth-child(3) { animation-delay: 0.3s; }
+.action-card:nth-child(4) { animation-delay: 0.4s; }
+.action-card:nth-child(5) { animation-delay: 0.5s; }
+.action-card:nth-child(6) { animation-delay: 0.6s; }

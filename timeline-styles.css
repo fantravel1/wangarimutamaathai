@@ -1,0 +1,268 @@
+/* ========================================
+   TIMELINE PAGE STYLES
+   ======================================== */
+
+.timeline-page {
+    background-color: #fafaf8;
+    padding-top: 80px;
+}
+
+.timeline-years {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--accent-gold);
+    margin-top: var(--spacing-md);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+/* ========================================
+   TIMELINE CONTENT
+   ======================================== */
+
+.timeline-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 60px;
+}
+
+/* Vertical Line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--primary-green), var(--accent-gold));
+    border-radius: 2px;
+}
+
+/* ========================================
+   TIMELINE EVENTS
+   ======================================== */
+
+.timeline-event {
+    position: relative;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.timeline-event:nth-child(1) { animation-delay: 0.1s; }
+.timeline-event:nth-child(2) { animation-delay: 0.2s; }
+.timeline-event:nth-child(3) { animation-delay: 0.3s; }
+.timeline-event:nth-child(4) { animation-delay: 0.4s; }
+.timeline-event:nth-child(5) { animation-delay: 0.5s; }
+.timeline-event:nth-child(n+6) { animation-delay: 0.6s; }
+
+/* Timeline Marker */
+.timeline-marker {
+    position: absolute;
+    left: -48px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 4px solid var(--secondary-green);
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-event:hover .timeline-marker {
+    transform: scale(1.5);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+}
+
+.timeline-event.highlight .timeline-marker {
+    width: 20px;
+    height: 20px;
+    left: -50px;
+    border-color: var(--accent-gold);
+    background: var(--accent-gold);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
+}
+
+/* Timeline Card */
+.timeline-card {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--secondary-green);
+    transition: all 0.3s ease;
+}
+
+.timeline-event:hover .timeline-card {
+    transform: translateX(8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--accent-gold);
+}
+
+.timeline-event.highlight .timeline-card {
+    background: linear-gradient(to right, rgba(212, 175, 55, 0.05), white);
+    border-left-color: var(--accent-gold);
+    border-left-width: 6px;
+}
+
+.timeline-year {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.1);
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.timeline-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.timeline-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dark-text);
+}
+
+/* ========================================
+   STATISTICS SECTION
+   ======================================== */
+
+.timeline-stats {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    color: white;
+    padding: var(--spacing-xl) var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+.stat-box .stat-number {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stat-box .stat-label {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    line-height: 1.4;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 968px) {
+    .timeline-page {
+        padding-top: 120px;
+    }
+
+    .timeline-container {
+        padding-left: 40px;
+    }
+
+    .timeline-container::before {
+        left: 15px;
+    }
+
+    .timeline-marker {
+        left: -36px;
+    }
+
+    .timeline-event.highlight .timeline-marker {
+        left: -38px;
+    }
+}
+
+@media (max-width: 640px) {
+    .timeline-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .timeline-container {
+        padding-left: 30px;
+    }
+
+    .timeline-container::before {
+        left: 10px;
+    }
+
+    .timeline-marker {
+        left: -25px;
+        width: 12px;
+        height: 12px;
+        border-width: 3px;
+    }
+
+    .timeline-event.highlight .timeline-marker {
+        left: -27px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .timeline-card {
+        padding: var(--spacing-sm);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive map showing the global impact of Wangari Maathai and the Green Belt Movement">
+    <title>Impact Map - Wangari Maathai</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav-shared.css">
+    <link rel="stylesheet" href="map-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="map-page">
+    <!-- Main Navigation -->
+    <nav class="main-navigation">
+        <div class="main-nav-container">
+            <a href="index.html" class="main-nav-logo">Wangari Maathai</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <div class="main-nav-links">
+                <a href="index.html" class="main-nav-link">Story</a>
+                <a href="timeline.html" class="main-nav-link">Timeline</a>
+                <a href="gallery.html" class="main-nav-link">Gallery</a>
+                <a href="videos.html" class="main-nav-link">Videos</a>
+                <a href="quotes.html" class="main-nav-link">Quotes</a>
+                <a href="research.html" class="main-nav-link">Research</a>
+                <a href="action.html" class="main-nav-link">Take Action</a>
+                <a href="map.html" class="main-nav-link active">Impact Map</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="page-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Global Impact</h1>
+            <p class="hero-subtitle">From seven trees in Kenya to a worldwide movement for environmental justice</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="map-content">
+
+        <!-- Statistics Overview -->
+        <section class="stats-overview">
+            <div class="stat-item">
+                <div class="stat-number">51M+</div>
+                <div class="stat-label">Trees Planted</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Countries Reached</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">30,000+</div>
+                <div class="stat-label">Women Employed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6,000+</div>
+                <div class="stat-label">Tree Nurseries</div>
+            </div>
+        </section>
+
+        <!-- Map Placeholder -->
+        <section class="map-section">
+            <h2 class="section-title">Green Belt Movement Impact Across Africa</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="africa-map">
+                        <div class="country-marker kenya" data-country="kenya">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Kenya</div>
+                        </div>
+                        <div class="country-marker tanzania" data-country="tanzania">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Tanzania</div>
+                        </div>
+                        <div class="country-marker uganda" data-country="uganda">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Uganda</div>
+                        </div>
+                        <div class="country-marker ethiopia" data-country="ethiopia">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Ethiopia</div>
+                        </div>
+                        <div class="country-marker" data-country="malawi" style="top: 65%; left: 60%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Malawi</div>
+                        </div>
+                        <div class="country-marker" data-country="zimbabwe" style="top: 70%; left: 55%;">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Zimbabwe</div>
+                        </div>
+                    </div>
+                    <p class="map-note">Interactive visualization of Green Belt Movement expansion across East and Central Africa</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regional Impact -->
+        <section class="regional-section">
+            <h2 class="section-title">Regional Impact Stories</h2>
+
+            <div class="region-grid">
+                <article class="region-card kenya-card">
+                    <h3 class="region-title">🇰🇪 Kenya</h3>
+                    <div class="region-stats">
+                        <span class="region-stat">45M+ trees planted</span>
+                        <span class="region-stat">3,000+ tree nurseries</span>
+                    </div>
+                    <p class="region-description">
+                        The birthplace of the Green Belt Movement. Over 45 million trees planted since 1977,
+                        restoring degraded landscapes, preventing soil erosion, and providing livelihoods
+                        for thousands of rural women.
+                    </p>
+                    <ul class="impact-list">
+                        <li>Reforested Mount Kenya region</li>
+                        <li>Protected Uhuru Park, Nairobi</li>
+                        <li>Saved Karura Forest</li>
+                        <li>Created sustainable firewood sources</li>
+                        <li>Improved water catchment areas</li>
+                    </ul>
+                </article>
+
+                <article class="region-card">
+                    <h3 class="region-title">🇹🇿 Tanzania</h3>
+                    <div class="region-stats">
+                        <span class="region-stat">2M+ trees planted</span>
+                    </div>
+                    <p class="region-description">
+                        Green Belt Movement methodology adopted by Tanzanian communities, focusing on
+                        coastal forest restoration and community-led conservation.
+                    </p>
+                    <ul class="impact-list">
+                        <li>Coastal mangrove restoration</li>
+                        <li>Community forestry programs</li>
+                        <li>Women's economic empowerment</li>
+                    </ul>
+                </article>
+
+                <article class="region-card">
+                    <h3 class="region-title">🇺🇬 Uganda</h3>
+                    <div class="region-stats">
+                        <span class="region-stat">1.5M+ trees planted</span>
+                    </div>
+                    <p class="region-description">
+                        Grassroots tree planting initiatives inspired by Wangari's model, addressing
+                        deforestation and land degradation.
+                    </p>
+                    <ul class="impact-list">
+                        <li>Watershed protection</li>
+                        <li>Agroforestry development</li>
+                        <li>School tree planting programs</li>
+                    </ul>
+                </article>
+
+                <article class="region-card">
+                    <h3 class="region-title">🇪🇹 Ethiopia</h3>
+                    <div class="region-stats">
+                        <span class="region-stat">5M+ trees planted</span>
+                    </div>
+                    <p class="region-description">
+                        Ethiopia's massive reforestation efforts drew inspiration from the Green Belt Movement,
+                        leading to nationwide tree planting campaigns.
+                    </p>
+                    <ul class="impact-list">
+                        <li>National Green Legacy Initiative</li>
+                        <li>Community-based restoration</li>
+                        <li>Combating desertification</li>
+                    </ul>
+                </article>
+
+                <article class="region-card">
+                    <h3 class="region-title">🌍 Global Reach</h3>
+                    <div class="region-stats">
+                        <span class="region-stat">50+ countries inspired</span>
+                    </div>
+                    <p class="region-description">
+                        Wangari's message spread worldwide, inspiring environmental movements across
+                        continents and catalyzing global climate action.
+                    </p>
+                    <ul class="impact-list">
+                        <li>UN Billion Tree Campaign</li>
+                        <li>International women's movements</li>
+                        <li>Global environmental education</li>
+                        <li>Climate justice advocacy</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Impact Categories -->
+        <section class="impact-categories">
+            <h2 class="section-title">Multifaceted Impact</h2>
+
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🌳</div>
+                    <h3>Environmental</h3>
+                    <ul>
+                        <li>Reforestation of degraded lands</li>
+                        <li>Soil erosion prevention</li>
+                        <li>Water catchment protection</li>
+                        <li>Biodiversity conservation</li>
+                        <li>Carbon sequestration</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">👩</div>
+                    <h3>Women's Empowerment</h3>
+                    <ul>
+                        <li>Economic independence through tree nurseries</li>
+                        <li>Leadership development</li>
+                        <li>Skills training programs</li>
+                        <li>Political participation</li>
+                        <li>Community organizing</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🤝</div>
+                    <h3>Community Development</h3>
+                    <ul>
+                        <li>Job creation in rural areas</li>
+                        <li>Food security improvement</li>
+                        <li>Access to firewood and clean water</li>
+                        <li>Social cohesion building</li>
+                        <li>Sustainable livelihoods</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🗳️</div>
+                    <h3>Democracy & Governance</h3>
+                    <ul>
+                        <li>Civic engagement promotion</li>
+                        <li>Accountability advocacy</li>
+                        <li>Pro-democracy activism</li>
+                        <li>Human rights defense</li>
+                        <li>Policy reform</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🎓</div>
+                    <h3>Education</h3>
+                    <ul>
+                        <li>Environmental education programs</li>
+                        <li>Youth leadership training</li>
+                        <li>Academic research support</li>
+                        <li>Public awareness campaigns</li>
+                        <li>Curriculum development</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🌍</div>
+                    <h3>Global Influence</h3>
+                    <ul>
+                        <li>International climate movement</li>
+                        <li>UN environmental initiatives</li>
+                        <li>Grassroots organizing model</li>
+                        <li>Ecofeminism advancement</li>
+                        <li>Environmental justice framework</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>In memory of Professor Wangari Muta Maathai (1940-2011)</p>
+            <p class="footer-small">Her seeds of change continue to grow across the globe</p>
+        </div>
+    </footer>
+
+    <script src="nav-shared.js"></script>
+    <script src="map-script.js"></script>
+</body>
+</html>
