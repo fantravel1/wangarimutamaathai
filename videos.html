@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Video library featuring documentaries, speeches, interviews, and educational content about Wangari Maathai">
+    <title>Video Library - Wangari Maathai</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav-shared.css">
+    <link rel="stylesheet" href="videos-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="videos-page">
+    <!-- Main Navigation -->
+    <nav class="main-navigation">
+        <div class="main-nav-container">
+            <a href="index.html" class="main-nav-logo">Wangari Maathai</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <div class="main-nav-links">
+                <a href="index.html" class="main-nav-link">Story</a>
+                <a href="timeline.html" class="main-nav-link">Timeline</a>
+                <a href="gallery.html" class="main-nav-link">Gallery</a>
+                <a href="videos.html" class="main-nav-link active">Videos</a>
+                <a href="quotes.html" class="main-nav-link">Quotes</a>
+                <a href="research.html" class="main-nav-link">Research</a>
+                <a href="action.html" class="main-nav-link">Take Action</a>
+                <a href="map.html" class="main-nav-link">Impact Map</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="page-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Video Library</h1>
+            <p class="hero-subtitle">Watch documentaries, speeches, and interviews bringing Wangari Maathai's voice and vision to life</p>
+        </div>
+    </header>
+
+    <!-- Video Categories -->
+    <nav class="video-categories">
+        <button class="category-btn active" data-category="all">All Videos</button>
+        <button class="category-btn" data-category="documentaries">Documentaries</button>
+        <button class="category-btn" data-category="speeches">Speeches</button>
+        <button class="category-btn" data-category="interviews">Interviews</button>
+        <button class="category-btn" data-category="educational">Educational</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="video-content">
+
+        <!-- Documentaries Section -->
+        <section class="video-section" data-category="documentaries">
+            <h2 class="section-title">Documentary Films</h2>
+
+            <div class="video-grid">
+                <article class="video-card featured">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">80:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Taking Root: The Vision of Wangari Maathai</h3>
+                        <p class="video-meta">2008 • Documentary • Emmy Award Winner</p>
+                        <p class="video-description">
+                            Award-winning documentary following Wangari Maathai's journey from rural Kenya through
+                            her founding of the Green Belt Movement, political persecution, and Nobel Prize recognition.
+                            Directed by Lisa Merton and Alan Dater.
+                        </p>
+                        <div class="video-links">
+                            <a href="https://www.pbs.org" target="_blank" class="video-link">Watch on PBS</a>
+                            <a href="https://takingrootfilm.com" target="_blank" class="video-link">Official Site</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="documentaries">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">52:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">The Green Belt Movement</h3>
+                        <p class="video-meta">2006 • UNEP Production</p>
+                        <p class="video-description">
+                            UN Environment Programme documentary examining the practical impact of the Green Belt
+                            Movement on rural communities and environmental restoration in Kenya.
+                        </p>
+                        <div class="video-links">
+                            <a href="https://www.unep.org" target="_blank" class="video-link">Watch on UNEP</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="documentaries">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">45:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Wangari Maathai: A Tribute</h3>
+                        <p class="video-meta">2011 • Kenya Broadcasting Corporation</p>
+                        <p class="video-description">
+                            Memorial documentary featuring tributes from global leaders, activists, and community
+                            members whose lives were transformed by Wangari's work.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Speeches Section -->
+        <section class="video-section" data-category="speeches">
+            <h2 class="section-title">Notable Speeches & Addresses</h2>
+
+            <div class="video-grid">
+                <article class="video-card featured" data-category="speeches">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">21:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Nobel Peace Prize Acceptance Speech</h3>
+                        <p class="video-meta">December 10, 2004 • Oslo, Norway</p>
+                        <p class="video-description">
+                            Wangari's powerful Nobel Prize acceptance speech connecting environmental degradation,
+                            poverty, and conflict. A historic moment as Africa's first woman Nobel Peace laureate.
+                        </p>
+                        <div class="video-links">
+                            <a href="https://www.nobelprize.org/prizes/peace/2004/maathai/lecture/" target="_blank" class="video-link">Watch on NobelPrize.org</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="speeches">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">18:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">TED Talk: Why I Plant Trees</h3>
+                        <p class="video-meta">2008 • TED Global</p>
+                        <p class="video-description">
+                            Inspiring talk about tree planting as a form of peaceful resistance and environmental
+                            healing, connecting local action to global change.
+                        </p>
+                        <div class="video-links">
+                            <a href="https://www.ted.com" target="_blank" class="video-link">Watch on TED</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="speeches">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">15:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">UN General Assembly Address</h3>
+                        <p class="video-meta">2008 • New York</p>
+                        <p class="video-description">
+                            Address to the United Nations on climate change, sustainable development,
+                            and the role of grassroots movements.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="speeches">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">25:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Women and Environment - Beijing Conference</h3>
+                        <p class="video-meta">1995 • Beijing World Conference on Women</p>
+                        <p class="video-description">
+                            Keynote address on the vital role of women in environmental protection
+                            and sustainable development.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Interviews Section -->
+        <section class="video-section" data-category="interviews">
+            <h2 class="section-title">Interviews & Conversations</h2>
+
+            <div class="video-grid">
+                <article class="video-card" data-category="interviews">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">28:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">BBC HARDtalk Interview</h3>
+                        <p class="video-meta">2008 • BBC World Service</p>
+                        <p class="video-description">
+                            In-depth interview examining Kenya's post-election violence, environmental
+                            challenges, and political corruption.
+                        </p>
+                        <div class="video-links">
+                            <a href="https://www.bbc.com" target="_blank" class="video-link">Watch on BBC</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="interviews">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">32:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Democracy Now! Extended Interview</h3>
+                        <p class="video-meta">2005 • Amy Goodman</p>
+                        <p class="video-description">
+                            Extensive conversation covering her Nobel Prize, environmental activism,
+                            and political persecution in Kenya.
+                        </p>
+                        <div class="video-links">
+                            <a href="https://www.democracynow.org" target="_blank" class="video-link">Watch on Democracy Now!</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="interviews">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">24:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">On Being Conversation</h3>
+                        <p class="video-meta">2010 • Krista Tippett</p>
+                        <p class="video-description">
+                            Spiritual and philosophical conversation about the sacred dimension of
+                            environmental stewardship and personal transformation.
+                        </p>
+                        <div class="video-links">
+                            <a href="https://onbeing.org" target="_blank" class="video-link">Listen on OnBeing.org</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="interviews">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">20:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">National Geographic Interview</h3>
+                        <p class="video-meta">2008 • National Geographic</p>
+                        <p class="video-description">
+                            Discussion about tree planting as peaceful resistance and the spiritual
+                            dimensions of environmental work.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Educational Section -->
+        <section class="video-section" data-category="educational">
+            <h2 class="section-title">Educational Videos</h2>
+
+            <div class="video-grid">
+                <article class="video-card" data-category="educational">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">12:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">The Green Belt Movement Explained</h3>
+                        <p class="video-meta">Educational • For Students</p>
+                        <p class="video-description">
+                            Introduction to the Green Belt Movement's history, methods, and impact
+                            for students and educators.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="educational">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">10:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Wangari Maathai Biography</h3>
+                        <p class="video-meta">Educational • Biography Channel</p>
+                        <p class="video-description">
+                            Comprehensive overview of Wangari's life from childhood through
+                            Nobel Prize and environmental legacy.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="educational">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">15:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Tree Planting Tutorial</h3>
+                        <p class="video-meta">How-To • Green Belt Movement</p>
+                        <p class="video-description">
+                            Learn the Green Belt Movement's tree planting techniques and
+                            community organizing strategies.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="video-card" data-category="educational">
+                    <div class="video-thumbnail">
+                        <div class="video-placeholder">
+                            <span class="play-icon">▶</span>
+                            <div class="video-duration">8:00</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Women in Environmental Leadership</h3>
+                        <p class="video-meta">Educational • Documentary Series</p>
+                        <p class="video-description">
+                            How Wangari inspired a generation of women environmental leaders
+                            across Africa and the world.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Video content © respective copyright holders</p>
+            <p class="footer-small">Links provided for educational purposes</p>
+            <p class="footer-small" style="margin-top: 1rem;">In memory of Professor Wangari Muta Maathai (1940-2011)</p>
+        </div>
+    </footer>
+
+    <script src="nav-shared.js"></script>
+    <script src="videos-script.js"></script>
+</body>
+</html>
