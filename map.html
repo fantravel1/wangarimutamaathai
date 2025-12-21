@@ -64,38 +64,317 @@
             </div>
         </section>
 
-        <!-- Map Placeholder -->
+        <!-- Interactive Map Section -->
         <section class="map-section">
             <h2 class="section-title">Green Belt Movement Impact Across Africa</h2>
             <div class="map-container">
-                <div class="map-placeholder">
-                    <div class="africa-map">
-                        <div class="country-marker kenya" data-country="kenya">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Kenya</div>
+                <div class="map-wrapper">
+                    <!-- SVG Map of Africa -->
+                    <svg class="africa-svg-map" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Africa Continent Outline -->
+                        <defs>
+                            <linearGradient id="landGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#e8f5e9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#c8e6c9;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+                            </filter>
+                            <radialGradient id="impactGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0" />
+                            </radialGradient>
+                        </defs>
+
+                        <!-- Ocean Background -->
+                        <rect width="100%" height="100%" fill="#e3f2fd" rx="12"/>
+
+                        <!-- Simplified Africa Continent Path -->
+                        <path class="africa-continent" d="
+                            M 380 50
+                            Q 420 45, 480 55
+                            L 520 70
+                            Q 560 80, 600 95
+                            L 650 120
+                            Q 700 140, 720 180
+                            L 740 230
+                            Q 750 280, 745 330
+                            L 735 380
+                            Q 725 420, 710 450
+                            L 700 470
+                            Q 720 500, 725 540
+                            L 720 590
+                            Q 710 640, 690 680
+                            L 660 720
+                            Q 630 755, 590 780
+                            L 540 800
+                            Q 490 815, 440 825
+                            L 380 830
+                            Q 320 825, 280 810
+                            L 240 785
+                            Q 200 755, 175 720
+                            L 155 680
+                            Q 140 640, 135 600
+                            L 130 550
+                            Q 125 500, 130 460
+                            L 140 420
+                            Q 90 380, 70 340
+                            L 55 290
+                            Q 45 240, 55 190
+                            L 75 150
+                            Q 100 110, 140 85
+                            L 190 65
+                            Q 240 50, 290 48
+                            L 340 48
+                            Q 360 48, 380 50
+                            Z
+                        " fill="url(#landGradient)" stroke="#4a7c59" stroke-width="2" filter="url(#dropShadow)"/>
+
+                        <!-- Country Regions (Simplified Boundaries) -->
+                        <!-- Morocco -->
+                        <path class="country-region" data-country="morocco" d="M 140 85 Q 180 70, 220 68 L 250 75 Q 280 85, 290 100 L 275 115 Q 250 125, 220 130 L 180 125 Q 150 115, 140 100 Z" fill="#a5d6a7" stroke="#2d5a3d" stroke-width="1" opacity="0.7"/>
+
+                        <!-- Egypt -->
+                        <path class="country-region" data-country="egypt" d="M 580 95 Q 620 90, 660 100 L 700 130 Q 720 160, 725 200 L 720 240 Q 700 260, 660 270 L 620 265 Q 580 255, 560 230 L 555 190 Q 555 140, 580 95 Z" fill="#a5d6a7" stroke="#2d5a3d" stroke-width="1" opacity="0.7"/>
+
+                        <!-- Nigeria -->
+                        <path class="country-region" data-country="nigeria" d="M 220 360 Q 260 350, 300 355 L 330 370 Q 350 390, 345 420 L 330 450 Q 300 465, 260 460 L 225 445 Q 200 420, 205 390 L 220 360 Z" fill="#81c784" stroke="#2d5a3d" stroke-width="1" opacity="0.8"/>
+
+                        <!-- DR Congo -->
+                        <path class="country-region" data-country="drc" d="M 380 420 Q 430 400, 480 410 L 520 440 Q 540 480, 530 530 L 510 580 Q 470 610, 420 605 L 370 585 Q 340 550, 350 500 L 365 450 Q 370 430, 380 420 Z" fill="#66bb6a" stroke="#2d5a3d" stroke-width="1" opacity="0.8"/>
+
+                        <!-- Ethiopia (Highlighted - Major Impact) -->
+                        <path class="country-region country-highlighted" data-country="ethiopia" d="M 580 290 Q 620 275, 660 285 L 690 310 Q 710 345, 700 385 L 680 420 Q 640 445, 590 440 L 550 415 Q 530 380, 540 340 L 560 305 Q 570 295, 580 290 Z" fill="#4caf50" stroke="#2d5a3d" stroke-width="2" opacity="0.9"/>
+
+                        <!-- Uganda (Highlighted - Major Impact) -->
+                        <path class="country-region country-highlighted" data-country="uganda" d="M 545 425 Q 575 415, 600 425 L 620 450 Q 630 480, 620 510 L 595 535 Q 560 545, 530 530 L 515 500 Q 510 465, 525 440 L 545 425 Z" fill="#43a047" stroke="#2d5a3d" stroke-width="2" opacity="0.95"/>
+
+                        <!-- Kenya (Origin - Brightest) -->
+                        <path class="country-region country-origin" data-country="kenya" d="M 600 440 Q 640 425, 680 440 L 710 480 Q 725 530, 710 575 L 680 610 Q 635 635, 590 620 L 560 585 Q 545 540, 560 495 L 580 460 Q 590 448, 600 440 Z" fill="#2e7d32" stroke="#1b5e20" stroke-width="3" opacity="1"/>
+
+                        <!-- Tanzania (Highlighted - Major Impact) -->
+                        <path class="country-region country-highlighted" data-country="tanzania" d="M 560 590 Q 600 570, 650 580 L 695 615 Q 720 660, 705 710 L 670 750 Q 620 775, 565 760 L 525 720 Q 505 675, 520 630 L 545 600 Q 552 593, 560 590 Z" fill="#43a047" stroke="#2d5a3d" stroke-width="2" opacity="0.95"/>
+
+                        <!-- Malawi -->
+                        <path class="country-region" data-country="malawi" d="M 595 680 Q 615 670, 635 680 L 650 710 Q 655 745, 640 775 L 615 795 Q 585 800, 565 785 L 555 755 Q 555 720, 575 695 L 595 680 Z" fill="#66bb6a" stroke="#2d5a3d" stroke-width="1.5" opacity="0.85"/>
+
+                        <!-- Zimbabwe -->
+                        <path class="country-region" data-country="zimbabwe" d="M 500 700 Q 540 685, 575 695 L 595 725 Q 600 760, 585 790 L 555 810 Q 515 820, 480 805 L 460 775 Q 455 740, 475 715 L 500 700 Z" fill="#66bb6a" stroke="#2d5a3d" stroke-width="1.5" opacity="0.85"/>
+
+                        <!-- Rwanda -->
+                        <path class="country-region" data-country="rwanda" d="M 520 520 Q 540 510, 560 518 L 575 540 Q 580 565, 565 585 L 540 598 Q 515 600, 500 585 L 495 560 Q 500 535, 520 520 Z" fill="#4caf50" stroke="#2d5a3d" stroke-width="1.5" opacity="0.9"/>
+
+                        <!-- Burundi -->
+                        <path class="country-region" data-country="burundi" d="M 510 585 Q 530 575, 550 582 L 565 605 Q 570 630, 555 650 L 530 662 Q 505 665, 490 650 L 485 625 Q 490 600, 510 585 Z" fill="#4caf50" stroke="#2d5a3d" stroke-width="1.5" opacity="0.9"/>
+
+                        <!-- South Africa -->
+                        <path class="country-region" data-country="southafrica" d="M 350 780 Q 420 755, 500 765 L 560 800 Q 580 840, 550 875 L 480 895 Q 400 900, 340 880 L 300 845 Q 290 805, 320 785 L 350 780 Z" fill="#81c784" stroke="#2d5a3d" stroke-width="1" opacity="0.8"/>
+
+                        <!-- Impact Glow Circles (emanating from Kenya) -->
+                        <circle class="impact-wave wave-1" cx="640" cy="530" r="80" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.4"/>
+                        <circle class="impact-wave wave-2" cx="640" cy="530" r="150" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.3"/>
+                        <circle class="impact-wave wave-3" cx="640" cy="530" r="250" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.2"/>
+
+                        <!-- Country Markers with Accurate Positions -->
+                        <!-- Kenya (Origin) -->
+                        <g class="map-marker marker-origin" data-country="kenya" data-trees="45000000" data-nurseries="3000" data-women="30000">
+                            <circle cx="640" cy="530" r="25" fill="url(#impactGlow)"/>
+                            <circle class="marker-pulse" cx="640" cy="530" r="18" fill="#d4af37"/>
+                            <circle cx="640" cy="530" r="12" fill="#fff" stroke="#d4af37" stroke-width="3"/>
+                            <text x="640" y="535" text-anchor="middle" fill="#1b5e20" font-size="10" font-weight="bold">★</text>
+                        </g>
+
+                        <!-- Ethiopia -->
+                        <g class="map-marker" data-country="ethiopia" data-trees="5000000" data-nurseries="500" data-women="8000">
+                            <circle cx="620" cy="355" r="14" fill="#d4af37"/>
+                            <circle cx="620" cy="355" r="8" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Uganda -->
+                        <g class="map-marker" data-country="uganda" data-trees="1500000" data-nurseries="400" data-women="5000">
+                            <circle cx="565" cy="470" r="14" fill="#d4af37"/>
+                            <circle cx="565" cy="470" r="8" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Tanzania -->
+                        <g class="map-marker" data-country="tanzania" data-trees="2000000" data-nurseries="600" data-women="7000">
+                            <circle cx="620" cy="660" r="14" fill="#d4af37"/>
+                            <circle cx="620" cy="660" r="8" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Rwanda -->
+                        <g class="map-marker" data-country="rwanda" data-trees="800000" data-nurseries="200" data-women="3000">
+                            <circle cx="535" cy="555" r="11" fill="#d4af37"/>
+                            <circle cx="535" cy="555" r="6" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Burundi -->
+                        <g class="map-marker" data-country="burundi" data-trees="500000" data-nurseries="150" data-women="2000">
+                            <circle cx="525" cy="620" r="10" fill="#d4af37"/>
+                            <circle cx="525" cy="620" r="5" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Malawi -->
+                        <g class="map-marker" data-country="malawi" data-trees="600000" data-nurseries="180" data-women="2500">
+                            <circle cx="600" cy="735" r="11" fill="#d4af37"/>
+                            <circle cx="600" cy="735" r="6" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Zimbabwe -->
+                        <g class="map-marker" data-country="zimbabwe" data-trees="400000" data-nurseries="120" data-women="1500">
+                            <circle cx="530" cy="755" r="10" fill="#d4af37"/>
+                            <circle cx="530" cy="755" r="5" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- DR Congo -->
+                        <g class="map-marker" data-country="drc" data-trees="700000" data-nurseries="200" data-women="3500">
+                            <circle cx="440" cy="510" r="11" fill="#d4af37"/>
+                            <circle cx="440" cy="510" r="6" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Nigeria -->
+                        <g class="map-marker" data-country="nigeria" data-trees="300000" data-nurseries="100" data-women="1200">
+                            <circle cx="275" cy="405" r="10" fill="#d4af37"/>
+                            <circle cx="275" cy="405" r="5" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- South Africa -->
+                        <g class="map-marker" data-country="southafrica" data-trees="250000" data-nurseries="80" data-women="1000">
+                            <circle cx="450" cy="835" r="10" fill="#d4af37"/>
+                            <circle cx="450" cy="835" r="5" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Morocco -->
+                        <g class="map-marker" data-country="morocco" data-trees="150000" data-nurseries="50" data-women="600">
+                            <circle cx="215" cy="100" r="9" fill="#d4af37"/>
+                            <circle cx="215" cy="100" r="4" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Egypt -->
+                        <g class="map-marker" data-country="egypt" data-trees="200000" data-nurseries="60" data-women="800">
+                            <circle cx="640" cy="180" r="9" fill="#d4af37"/>
+                            <circle cx="640" cy="180" r="4" fill="#fff" stroke="#d4af37" stroke-width="2"/>
+                        </g>
+
+                        <!-- Connection Lines from Kenya -->
+                        <g class="connection-lines" opacity="0.4">
+                            <line x1="640" y1="530" x2="620" y2="355" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                            <line x1="640" y1="530" x2="565" y2="470" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                            <line x1="640" y1="530" x2="620" y2="660" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                            <line x1="640" y1="530" x2="535" y2="555" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                            <line x1="640" y1="530" x2="525" y2="620" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                            <line x1="640" y1="530" x2="600" y2="735" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                            <line x1="640" y1="530" x2="530" y2="755" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                            <line x1="640" y1="530" x2="440" y2="510" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                        </g>
+
+                        <!-- Labels for Key Countries -->
+                        <g class="country-labels">
+                            <text x="640" y="575" text-anchor="middle" fill="#1b5e20" font-size="14" font-weight="bold" class="country-label">KENYA</text>
+                            <text x="640" y="590" text-anchor="middle" fill="#2d5a3d" font-size="10" class="country-sublabel">Origin</text>
+                        </g>
+                    </svg>
+
+                    <!-- Info Popup -->
+                    <div class="country-popup" id="countryPopup">
+                        <button class="popup-close" aria-label="Close popup">&times;</button>
+                        <h3 class="popup-title"></h3>
+                        <div class="popup-stats">
+                            <div class="popup-stat">
+                                <span class="popup-stat-icon">🌳</span>
+                                <span class="popup-stat-value" id="popupTrees"></span>
+                                <span class="popup-stat-label">Trees Planted</span>
+                            </div>
+                            <div class="popup-stat">
+                                <span class="popup-stat-icon">🌱</span>
+                                <span class="popup-stat-value" id="popupNurseries"></span>
+                                <span class="popup-stat-label">Tree Nurseries</span>
+                            </div>
+                            <div class="popup-stat">
+                                <span class="popup-stat-icon">👩</span>
+                                <span class="popup-stat-value" id="popupWomen"></span>
+                                <span class="popup-stat-label">Women Employed</span>
+                            </div>
                         </div>
-                        <div class="country-marker tanzania" data-country="tanzania">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Tanzania</div>
+                        <p class="popup-description" id="popupDescription"></p>
+                    </div>
+                </div>
+
+                <!-- Map Legend -->
+                <div class="map-legend">
+                    <h4 class="legend-title">Map Legend</h4>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="legend-marker origin"></span>
+                            <span>Origin - Kenya (1977)</span>
                         </div>
-                        <div class="country-marker uganda" data-country="uganda">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Uganda</div>
+                        <div class="legend-item">
+                            <span class="legend-marker major"></span>
+                            <span>Major Impact (1M+ trees)</span>
                         </div>
-                        <div class="country-marker ethiopia" data-country="ethiopia">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Ethiopia</div>
+                        <div class="legend-item">
+                            <span class="legend-marker moderate"></span>
+                            <span>Moderate Impact (500K+ trees)</span>
                         </div>
-                        <div class="country-marker" data-country="malawi" style="top: 65%; left: 60%;">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Malawi</div>
+                        <div class="legend-item">
+                            <span class="legend-marker growing"></span>
+                            <span>Growing Movement</span>
                         </div>
-                        <div class="country-marker" data-country="zimbabwe" style="top: 70%; left: 55%;">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Zimbabwe</div>
+                        <div class="legend-item">
+                            <span class="legend-line"></span>
+                            <span>Movement Expansion Path</span>
                         </div>
                     </div>
-                    <p class="map-note">Interactive visualization of Green Belt Movement expansion across East and Central Africa</p>
+                    <p class="legend-note">Click on any marker to see detailed impact statistics</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline of Expansion -->
+        <section class="expansion-timeline">
+            <h2 class="section-title">Movement Expansion Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-year">1977</div>
+                    <div class="timeline-content">
+                        <h4>Kenya - The Beginning</h4>
+                        <p>Wangari Maathai plants seven trees in Nairobi, launching the Green Belt Movement with a focus on women's empowerment and environmental conservation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1986</div>
+                    <div class="timeline-content">
+                        <h4>Pan-African Expansion</h4>
+                        <p>The Pan African Green Belt Network established, spreading the movement's methodology to Tanzania, Uganda, Ethiopia, and other African nations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <div class="timeline-content">
+                        <h4>Rio Earth Summit</h4>
+                        <p>Global recognition at the UN Earth Summit leads to partnerships with international environmental organizations and expansion beyond Africa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <div class="timeline-content">
+                        <h4>Nobel Peace Prize</h4>
+                        <p>Wangari becomes the first African woman to receive the Nobel Peace Prize, catalyzing worldwide adoption of community-based tree planting.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-content">
+                        <h4>Billion Tree Campaign</h4>
+                        <p>Wangari helps launch the UN Billion Tree Campaign, which surpasses its goal and plants over 12 billion trees globally.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Today</div>
+                    <div class="timeline-content">
+                        <h4>Continuing Legacy</h4>
+                        <p>Over 51 million trees planted across Africa, with the Green Belt Movement methodology adopted in 50+ countries worldwide.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -105,11 +384,12 @@
             <h2 class="section-title">Regional Impact Stories</h2>
 
             <div class="region-grid">
-                <article class="region-card kenya-card">
-                    <h3 class="region-title">🇰🇪 Kenya</h3>
+                <article class="region-card kenya-card" id="region-kenya">
+                    <h3 class="region-title">Kenya</h3>
                     <div class="region-stats">
                         <span class="region-stat">45M+ trees planted</span>
                         <span class="region-stat">3,000+ tree nurseries</span>
+                        <span class="region-stat">30,000+ women employed</span>
                     </div>
                     <p class="region-description">
                         The birthplace of the Green Belt Movement. Over 45 million trees planted since 1977,
@@ -119,74 +399,100 @@
                     <ul class="impact-list">
                         <li>Reforested Mount Kenya region</li>
                         <li>Protected Uhuru Park, Nairobi</li>
-                        <li>Saved Karura Forest</li>
+                        <li>Saved Karura Forest (1,000+ hectares)</li>
                         <li>Created sustainable firewood sources</li>
                         <li>Improved water catchment areas</li>
+                        <li>Trained community leaders in 6,000+ groups</li>
                     </ul>
                 </article>
 
-                <article class="region-card">
-                    <h3 class="region-title">🇹🇿 Tanzania</h3>
+                <article class="region-card" id="region-tanzania">
+                    <h3 class="region-title">Tanzania</h3>
                     <div class="region-stats">
                         <span class="region-stat">2M+ trees planted</span>
+                        <span class="region-stat">600+ nurseries</span>
                     </div>
                     <p class="region-description">
                         Green Belt Movement methodology adopted by Tanzanian communities, focusing on
-                        coastal forest restoration and community-led conservation.
+                        coastal forest restoration and community-led conservation since the late 1980s.
                     </p>
                     <ul class="impact-list">
                         <li>Coastal mangrove restoration</li>
                         <li>Community forestry programs</li>
                         <li>Women's economic empowerment</li>
+                        <li>Kilimanjaro watershed protection</li>
                     </ul>
                 </article>
 
-                <article class="region-card">
-                    <h3 class="region-title">🇺🇬 Uganda</h3>
+                <article class="region-card" id="region-uganda">
+                    <h3 class="region-title">Uganda</h3>
                     <div class="region-stats">
                         <span class="region-stat">1.5M+ trees planted</span>
+                        <span class="region-stat">400+ nurseries</span>
                     </div>
                     <p class="region-description">
                         Grassroots tree planting initiatives inspired by Wangari's model, addressing
-                        deforestation and land degradation.
+                        deforestation and land degradation in the Lake Victoria basin.
                     </p>
                     <ul class="impact-list">
-                        <li>Watershed protection</li>
+                        <li>Lake Victoria watershed protection</li>
                         <li>Agroforestry development</li>
                         <li>School tree planting programs</li>
+                        <li>Mabira Forest conservation</li>
                     </ul>
                 </article>
 
-                <article class="region-card">
-                    <h3 class="region-title">🇪🇹 Ethiopia</h3>
+                <article class="region-card" id="region-ethiopia">
+                    <h3 class="region-title">Ethiopia</h3>
                     <div class="region-stats">
                         <span class="region-stat">5M+ trees planted</span>
+                        <span class="region-stat">500+ nurseries</span>
                     </div>
                     <p class="region-description">
                         Ethiopia's massive reforestation efforts drew inspiration from the Green Belt Movement,
-                        leading to nationwide tree planting campaigns.
+                        leading to nationwide tree planting campaigns addressing highland deforestation.
                     </p>
                     <ul class="impact-list">
                         <li>National Green Legacy Initiative</li>
                         <li>Community-based restoration</li>
-                        <li>Combating desertification</li>
+                        <li>Combating desertification in the north</li>
+                        <li>Blue Nile watershed protection</li>
                     </ul>
                 </article>
 
-                <article class="region-card">
-                    <h3 class="region-title">🌍 Global Reach</h3>
+                <article class="region-card" id="region-rwanda">
+                    <h3 class="region-title">Rwanda</h3>
+                    <div class="region-stats">
+                        <span class="region-stat">800K+ trees planted</span>
+                        <span class="region-stat">200+ nurseries</span>
+                    </div>
+                    <p class="region-description">
+                        Post-genocide reforestation efforts embraced GBM principles, combining environmental
+                        restoration with community healing and reconciliation.
+                    </p>
+                    <ul class="impact-list">
+                        <li>Nyungwe Forest buffer zones</li>
+                        <li>Umuganda community planting days</li>
+                        <li>Women-led cooperative nurseries</li>
+                    </ul>
+                </article>
+
+                <article class="region-card" id="region-global">
+                    <h3 class="region-title">Global Reach</h3>
                     <div class="region-stats">
                         <span class="region-stat">50+ countries inspired</span>
+                        <span class="region-stat">12B+ trees (UN campaign)</span>
                     </div>
                     <p class="region-description">
                         Wangari's message spread worldwide, inspiring environmental movements across
-                        continents and catalyzing global climate action.
+                        continents and catalyzing global climate action through her tireless advocacy.
                     </p>
                     <ul class="impact-list">
-                        <li>UN Billion Tree Campaign</li>
-                        <li>International women's movements</li>
-                        <li>Global environmental education</li>
-                        <li>Climate justice advocacy</li>
+                        <li>UN Billion Tree Campaign (exceeded 12 billion)</li>
+                        <li>International women's environmental movements</li>
+                        <li>Global environmental education curriculum</li>
+                        <li>Climate justice advocacy framework</li>
+                        <li>Grassroots organizing model adopted globally</li>
                     </ul>
                 </article>
             </div>
