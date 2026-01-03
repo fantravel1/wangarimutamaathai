@@ -599,8 +599,21 @@
         <div class="footer-content">
             <p>In memory of Professor Wangari Muta Maathai (1940-2011)</p>
             <p class="footer-small">Her seeds of change continue to grow across the globe</p>
+            <p class="footer-updated">Last updated: <time datetime="2026-01-03">January 3, 2026</time></p>
         </div>
     </footer>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wangarimutamaathai.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Impact Map", "item": "https://wangarimutamaathai.com/map.html"}
+        ]
+    }
+    </script>
 
     <script src="nav-shared.js"></script>
     <script src="map-script.js"></script>

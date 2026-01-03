@@ -769,13 +769,23 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>This research page is a living document. Resources are updated regularly.</p>
-            <p class="footer-small">For corrections or additional resources, please consult academic databases and official archives.</p>
-            <p class="footer-small" style="margin-top: 1rem;">
-                <a href="index.html" class="footer-link">← Return to Visual Story</a>
-            </p>
+            <p>In memory of Professor Wangari Muta Maathai (1940-2011)</p>
+            <p class="footer-small">Environmental activist, Nobel Peace Prize laureate, and champion of the Earth</p>
+            <p class="footer-updated">Last updated: <time datetime="2026-01-03">January 3, 2026</time></p>
         </div>
     </footer>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wangarimutamaathai.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://wangarimutamaathai.com/research.html"}
+        ]
+    }
+    </script>
 
     <script src="nav-shared.js"></script>
     <script src="research-script.js"></script>
