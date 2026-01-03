@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage - Highest Priority -->
+    <url>
+        <loc>https://wangarimutamaathai.com/</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Timeline Page -->
+    <url>
+        <loc>https://wangarimutamaathai.com/timeline.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Quotes Page -->
+    <url>
+        <loc>https://wangarimutamaathai.com/quotes.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Hummingbird Story Page - High Priority SEO Target -->
+    <url>
+        <loc>https://wangarimutamaathai.com/hummingbird-story.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+    <!-- FAQ Page -->
+    <url>
+        <loc>https://wangarimutamaathai.com/faq.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Gallery Page -->
+    <url>
+        <loc>https://wangarimutamaathai.com/gallery.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Videos Page -->
+    <url>
+        <loc>https://wangarimutamaathai.com/videos.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Research Page -->
+    <url>
+        <loc>https://wangarimutamaathai.com/research.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Take Action Page -->
+    <url>
+        <loc>https://wangarimutamaathai.com/action.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Impact Map Page -->
+    <url>
+        <loc>https://wangarimutamaathai.com/map.html</loc>
+        <lastmod>2026-01-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>
